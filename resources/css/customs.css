@@ -1,0 +1,309 @@
+@CHARSET "UTF-8";
+/**
+ *	ADD CUSTOM COMPONENTS AND NON-BOOTSTRAP-EXTENSIONS HERE 
+ */
+/* ..:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::.. */
+/* ..:: TILE BOXES :::::::::::::::::::::::::::::::::::::::::::::::::::::::::::.. */
+/* ..:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::.. */
+.tile-box 
+{
+	border-radius: 2px;
+	position: relative;
+	display: block;
+	margin-bottom: 20px;
+	box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+}
+
+.tile-box > a {
+    display: block;
+    height: 100%;
+    width: 100%;
+    text-decoration: none;
+    color: #fff;
+	color: rgba(255, 255, 255, 0.8);
+}
+
+.tile-box .inner 
+{
+	padding: 10px;
+}
+
+.tile-box > .tile-box-footer 
+{
+	position: relative;
+	text-align: center;
+	padding: 3px 0;
+	color: #fff;
+	color: rgba(255, 255, 255, 0.8);
+	display: block;
+	z-index: 10;
+	background: rgba(0, 0, 0, 0.1);
+	text-decoration: none;
+}
+
+.tile-box > .tile-box-footer:hover 
+{
+	color: #fff;
+	background: rgba(0, 0, 0, 0.15);
+}
+
+.tile-box h3 
+{
+	font-size: 38px;
+	font-weight: bold;
+	margin: 0 0 10px 0;
+	white-space: nowrap;
+	padding: 0;
+}
+
+.tile-box p 
+{
+	font-size: 15px;
+}
+
+.tile-box p > small 
+{
+	display: block;
+	color: #f9f9f9;
+	font-size: 13px;
+	margin-top: 5px;
+}
+
+.tile-box h3,
+.tile-box p 
+{
+  z-index: 5;
+}
+
+.tile-box .icon 
+{
+	-webkit-transition: all 0.3s linear;
+	-o-transition: all 0.3s linear;
+	transition: all 0.3s linear;
+	position: absolute;
+	top: 5px;
+	right: 10px;
+	z-index: 0;
+	font-size: 50px;
+	color: rgba(0, 0, 0, 0.15);
+}
+
+.tile-box:hover 
+{
+	text-decoration: none;
+	color: #f9f9f9;
+}
+
+.tile-box:hover .icon 
+{
+	font-size: 75px;
+}
+
+@media (max-width: 767px) 
+{
+	.tile-box 
+	{	
+		text-align: center;
+	}
+	
+	.tile-box .icon 
+	{
+		font-size: 25px;
+	}
+	
+	.tile-box:hover .icon 
+	{
+		font-size: 50px;
+	}
+
+	.tile-box p 
+	{
+		font-size: 12px;
+	}
+}
+
+/* ..:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::.. */
+/* ..:: BUTTONS WITH ARROWS ::::::::::::::::::::::::::::::::::::::::::::::::::.. */
+/* ..:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::.. */
+.btn-arrow-right,
+.btn-arrow-left {
+    position: relative;
+    padding-left: 18px;
+    padding-right: 18px;
+}
+.btn-arrow-right {
+    padding-left: 36px;
+}
+.btn-arrow-left {
+    padding-right: 36px;
+}
+.btn-arrow-right:before,
+.btn-arrow-right:after,
+.btn-arrow-left:before,
+.btn-arrow-left:after { /* make two squares (before and after), looking similar to the button */
+    content:"";
+    position: absolute;
+    top: 5px; /* move it down because of rounded corners */
+    width: 22px; /* same as height */
+    height: 22px; /* button_outer_height / sqrt(2) */
+    background: inherit; /* use parent background */
+    border: inherit; /* use parent border */
+    border-left-color: transparent; /* hide left border */
+    border-bottom-color: transparent; /* hide bottom border */
+    border-radius: 0px 4px 0px 0px; /* round arrow corner, the shorthand property doesn't accept "inherit" so it is set to 4px */
+    -webkit-border-radius: 0px 4px 0px 0px;
+    -moz-border-radius: 0px 4px 0px 0px;
+}
+.btn-arrow-right:before,
+.btn-arrow-right:after {
+    transform: rotate(45deg); /* rotate right arrow squares 45 deg to point right */
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+}
+.btn-arrow-left:before,
+.btn-arrow-left:after {
+    transform: rotate(225deg); /* rotate left arrow squares 225 deg to point left */
+    -webkit-transform: rotate(225deg);
+    -moz-transform: rotate(225deg);
+    -o-transform: rotate(225deg);
+    -ms-transform: rotate(225deg);
+}
+.btn-arrow-right:before,
+.btn-arrow-left:before { /* align the "before" square to the left */
+    left: -11px;
+}
+.btn-arrow-right:after,
+.btn-arrow-left:after { /* align the "after" square to the right */
+    right: -11px;
+}
+.btn-arrow-right:after,
+.btn-arrow-left:before { /* bring arrow pointers to front */
+    z-index: 1;
+}
+.btn-arrow-right:before,
+.btn-arrow-left:after { /* hide arrow tails background */
+    background-color: white;
+}
+
+/* ..:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::.. */
+/* ..:: BREADCRUMP WITH ARROWS :::::::::::::::::::::::::::::::::::::::::::::::.. */
+/* ..:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::.. */
+.breadcrumb-arrow {
+	/*centering*/
+	display: inline-block;
+	box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.35);
+	overflow: hidden;
+	border-radius: 5px;
+	/*Lets add the numbers for each link using CSS counters. flag is the name of the counter. to be defined using counter-reset in the parent element of the links*/
+	counter-reset: flag; 
+}
+
+.breadcrumb-arrow a {
+	text-decoration: none;
+	text-align: center;
+	outline: none;
+	display: block;
+	float: left;
+	font-size: 12px;
+	line-height: 36px;
+	color: white;
+	/*need more margin on the left of links to accomodate the numbers*/
+	padding: 0 10px 0 60px;
+	background: #666;
+	background: linear-gradient(#666, #333);
+	position: relative;
+}
+
+.breadcrumb-arrow a.disabled
+{
+	pointer-events: none ;
+}
+
+/*since the first link does not have a triangle before it we can reduce the left padding to make it look consistent with other links*/
+.breadcrumb-arrow a:first-child {
+	padding-left: 46px;
+	border-radius: 5px 0 0 5px; /*to match with the parent's radius*/
+}
+.breadcrumb-arrow a:first-child:before {
+	left: 14px;
+}
+.breadcrumb-arrow a:last-child {
+	border-radius: 0 5px 5px 0; /*this was to prevent glitches on hover*/
+	padding-right: 20px;
+}
+
+/*hover/active styles*/
+.breadcrumb-arrow a.active, .breadcrumb-arrow a:hover{
+	background: #333;
+	background: linear-gradient(#333, #000);
+}
+.breadcrumb-arrow a.active:after, .breadcrumb-arrow a:hover:after {
+	background: #333;
+	background: linear-gradient(135deg, #333, #000);
+}
+
+/*adding the arrows for the breadcrumb-arrows using rotated pseudo elements*/
+.breadcrumb-arrow a:after {
+	content: '';
+	position: absolute;
+	top: 0; 
+	right: -18px; /*half of square's length*/
+	/*same dimension as the line-height of .breadcrumb-arrow a */
+	width: 36px; 
+	height: 36px;
+	/*as you see the rotated square takes a larger height. which makes it tough to position it properly. So we are going to scale it down so that the diagonals become equal to the line-height of the link. We scale it to 70.7% because if square's: 
+	length = 1; diagonal = (1^2 + 1^2)^0.5 = 1.414 (pythagoras theorem)
+	if diagonal required = 1; length = 1/1.414 = 0.707*/
+	transform: scale(0.707) rotate(45deg);
+	/*we need to prevent the arrows from getting buried under the next link*/
+	z-index: 1;
+	/*background same as links but the gradient will be rotated to compensate with the transform applied*/
+	background: #666;
+	background: linear-gradient(135deg, #666, #333);
+	/*stylish arrow design using box shadow*/
+	box-shadow: 
+		2px -2px 0 2px rgba(0, 0, 0, 0.4), 
+		3px -3px 0 2px rgba(255, 255, 255, 0.1);
+	/*
+		5px - for rounded arrows and 
+		50px - to prevent hover glitches on the border created using shadows*/
+	border-radius: 0 5px 0 50px;
+}
+/*we dont need an arrow after the last link*/
+.breadcrumb-arrow a:last-child:after {
+	content: none;
+}
+/*we will use the :before element to show numbers*/
+.breadcrumb-arrow a:before {
+	content: counter(flag);
+	counter-increment: flag;
+	/*some styles now*/
+	border-radius: 100%;
+	width: 20px;
+	height: 20px;
+	line-height: 20px;
+	margin: 8px 0;
+	position: absolute;
+	top: 0;
+	left: 30px;
+	background: #444;
+	background: linear-gradient(#444, #222);
+	font-weight: bold;
+}
+
+
+.flat a, .flat a:after {
+	background: white;
+	color: black;
+	transition: all 0.5s;
+}
+.flat a:before {
+	background: white;
+	box-shadow: 0 0 0 1px #ccc;
+}
+.flat a:hover, .flat a.active, 
+.flat  a:hover:after, .flat a.active:after{
+ 	background: #9EEB62; 
+}

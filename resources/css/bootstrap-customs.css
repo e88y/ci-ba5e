@@ -1,0 +1,420 @@
+/**
+	custom changes, corrections and extensions for BOOTSTRAP. 
+	!!! DONT OVERRIDE BOOTSTRAP RULES WITH ANOTHER COLOR IN HERE !!! 
+	!!! ADD PROJECT DEPENDENT STYLES INTO CUSTOMS.CSS !!! 
+*/
+
+
+
+.vertical-horizontal-center {
+    text-align: center !important;
+    vertical-align: middle !important;
+}
+
+.label-arrow {
+    position: relative;
+}
+.label-arrow-right {
+    border-top-right-radius:0;
+    border-bottom-right-radius:0;
+    margin-right:10px;
+    margin-left: 10px;
+}
+.label-info.label-arrow:after {
+    border-left-color:#5bc0de;
+}
+.label-info.label-arrow:before {
+    border-right-color:#5bc0de;
+}
+.label-arrow-right:after {
+    left: 100%;
+    top: 50%;
+    border: solid transparent;
+    content: " ";
+    height: 0;
+    width: 0;
+    position: absolute;
+    border-left-color: #999;
+    border-width: 10px;
+    border-bottom-width: 9px;
+    margin-top: -10px;
+}
+
+/* ..:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::.. */
+/** Disable paddings */
+.no-padding {
+   padding-bottom: 0!important;
+   padding-left: 0!important;
+   padding-right: 0!important;
+   padding-top: 0!important;
+}
+
+.no-side-padding {
+   padding-left: 0!important;
+   padding-right: 0!important;
+}
+
+/* ..:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::.. */
+/** Disable margins */
+.no-margin {
+   margin-bottom: 0!important;
+   margin-left: 0!important;
+   margin-right: 0!important;
+   margin-top: 0!important;
+}
+.no-side-margin {
+	margin-left: 0px!important;
+	margin-right: 0px!important;
+}
+
+.state-icon {
+    left: -5px;
+}
+
+.alert{
+	margin:15px;
+}
+
+/* ..:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::.. */
+/* ..:: BADGE STYLE FOR LABELS TO MAKE THEM LOOK LIKE BADGES :::::::::::::::::.. */
+/* ..:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::.. */
+.label-as-badge {
+    border-radius: 1em;
+}
+
+/* ..:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::.. */
+/* ..:: PROGRESS BARS ::::::::::::::::::::::::::::::::::::::::::::::::::::::::.. */
+/* ..:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::.. */
+.progress{
+	margin-top: 7px;
+	margin-bottom: 0;	
+}
+
+/* ..:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::.. */
+/* ..:: BS DATETIMEPICKER ::::::::::::::::::::::::::::::::::::::::::::::::::::::::.. */
+/* ..:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::.. */
+.datepicker-dropdown{
+	padding: 10px !important;
+}
+
+/* ..:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::.. */
+/* ..:: CSS3 MARQUEE EFFECT ::::::::::::::::::::::::::::::::::::::::::::::::::.. */
+/* ..:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::.. */
+.marquee {
+    width: auto;
+    margin: 0 auto;
+    white-space: nowrap;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+.marquee span {
+    display: inline-block;
+    padding-left: 100%;  /* show the marquee just outside the paragraph */
+    animation: marquee 15s linear infinite;
+}
+
+.marquee span:hover {
+    animation-play-state: paused
+}
+
+/* Make it move */
+@keyframes marquee {
+    0%   { transform: translate(0, 0); }
+    100% { transform: translate(-100%, 0); }
+}
+
+/* ..:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::.. */
+/* ..:: DATATABLE ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::.. */
+/* ..:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::.. */
+.dataTables_processing {
+	position: relative;
+	top: 60px!important;
+}
+
+/* ..:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::.. */
+/* ..:: RESPONSIVE TABLES ::::::::::::::::::::::::::::::::::::::::::::::::::::.. */
+/* ..:: The following rules only apply at screen sizes < 768px in the ::::::::.. */
+/* ..:: original bootstrap css. we want it on all sizess :::::::::::::::::::::.. */
+/* ..:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::.. */
+
+/* ..:: FIX FIRST COLUMN ALWAYS SHOWS SORT ICON ::::::::::::::::::::::::::::::.. */
+table.dataTable thead .sortable_disabled::after{
+	content: ""!important;
+}
+
+/* ..:: SELECT EXTENSION :::::::::::::::::::::::::::::::::::::::::::::::::::::.. */
+table.dataTable tr th.select-checkbox.selected::after {
+    content: "✔" !important;
+    margin-top: -11px;
+    margin-left: -4px;
+    text-align: center;
+    text-shadow: rgb(176, 190, 217) 1px 1px, rgb(176, 190, 217) -1px -1px, rgb(176, 190, 217) 1px -1px, rgb(176, 190, 217) -1px 1px;
+}
+
+.select-checkbox{
+	cursor: pointer;
+}
+
+/* ..:: DETAILS COLUMN ::::::::::::::::::::::::::::::::::::::::::::::::::::::::.. */
+td.details-control {
+	background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAACjElEQVR4Aa2V30uTURjHnVBUgglCaXVTJJVLMdhQm7+1JEvJiKAggmgSQiKJl0V0E13UVf0HQZmBLcvlpqa55tqV0YoMzIhY6js0yDH11X17vuO8Sq5Zgl/48DznPD/G63nOMSmBkoUNwhYhTUgn9NUeY8z5p0wqOVXYKRwQLMJhhYV7Kpaqck2rNdskbBPMdrv9osfjcQaDwW/RaHSR0OceY8xhrqox/a3ZZmGHkO9wOB7ouj6PBGKMOcxlzcqmdDYKGZmZmSWjo6PvIYosRuDWXGj50IwTb4+hxleN5sAVvJh4jvBCGBRzWSO121UPk3EAaUKuz+d7ycTp+Wnc/nwL1d4qHBVidmjZv/npBkJzGiiv19vFWmGrcVDsvKupqeky/056VMf1j9dQOViBKo9Aa/ixdbnYcrQGWsBc1jQ2NtrZQ/VKShHM8kvdEPVN9qJsoBRl/aUoHyiJ+UpcCxJTtmfCDYoHJT2yYyOlPtcaCoUmGGwdbkVRbxGK+2y0gg2GisUvNmJCy/BVUJqm/eBIxXqpgbUtiBise12HQlc+ClwFSKRCiZH6wXpQs7OzETWn6XENa/trYemywuK0IpGsTotgRU3fcVBzouWG6pOnpqY0BhuGGpDXeUjIW7JKcfuX3tjjP9k4FBkZN4PtY+042JGzzNMcGDJ35C7tmcU++tJmjE63OpSUuLEJ62GcfXUO+59kr8rJnlOY0WfAGtYaY/PHYPv9fhdEY7++4nz/BWS17UPWY0Es2avWp3vOYOTnCCheBtaqHskJr95kZBL3AvdR2XkEex5mYbdQ+qwCd97dRTAcXHn1Moyrt16PA2tN//V8jY+Pf4cS/VWerzU9sDay1gd2Xf4F/AZqlpeB9836LwAAAABJRU5ErkJggg==) no-repeat center center;
+    cursor: pointer;
+}
+tr.shown td.details-control {
+    background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAACdUlEQVR4Aa2V30tTYRjHVSgsoQKhXPUPlKZMlImiIIg/pggiiDeCBAdqyC4Kf9zVhVdeelX33QnCbtYvxZsxxkoqKxiz1SzdFudMb5xO5/bt+fa+sPCw3IVf+PA+532e5ytn53lfK0qoSrggXBauCbUKxtxjjjVnq1IXXxFuCXeEFqGdMOYec6zRtZX/M6sWrgv1hmHcDwQCLxOJxM9CoZAnjLnHHGt0bbXdVG1cEm4KLp/P9yKXyx2jhJhjDWvZc9qUwUWhzuFwdMVisc8QFQ4PcbCygvT0NJLDw0gNDSH96DEyfj8KmQwo1rJHem8oD2VapX/sxlAo9Aqi/N4e9hYWsDMwgARxD2DH7ZZYren5eZxYFqhgMOhnr3BVeSnn216v98Hf3yqXg/X0CX719YFs9/WquJfPGtkzZ2fBWvZ4PB6DHtqrokaol7/0GqLM2hq2enpsxMmpvf3VVVD8UOJxV42Uet1Wy7J+M5mam8P37u6ySM7MgDJNM8mRUl5qYDtOREz+GB3FZlcXNjs7UUrMk/jYGKhsNnuo57TWZhgTw0hHO0EpRdpV/tvICKgjUdFQv/Lu7q7JZHxqCl9dLqGtSJtL4VJ80Wvc8xD2V9YfRUbmLZPp5WVstLTYaSWt+lmt1tISKH5Q/VFqbGOTl6GNTk7iQ3Oz4FSrU8UfuTqdBJHxceQz+2APe/8Zm+Jgh8PhNxBlt7YQNQysNzVivbEJ7wXGiiZEJiZwEI2C4mFgr/aoKnn0jk0TiWfPsTE4iHcN9xBuaMCn/n5sLy7iKJk8ffTqikfvfC4H9laWdX2lUqltaDEu9/o664LtIOVfsOf4L+APb5yaiwyN8+8AAAAASUVORK5CYII=) no-repeat center center;
+}
+
+/* ..:: DATATABLE ROW DETAILS (INNER) ::::::::::::::::::::::::::::::::::::::::.. */
+table.dt-row-details-table  {
+	width:100%;
+}
+
+table.dt-row-details-table td:first-child{
+	width: 160px;
+}
+
+@media (max-width: 768px) 
+{
+	table.dt-row-details-table tr:last-child{
+		/*border-bottom: 1px solid;*/
+	}
+}
+
+/* ..:: CENTERING IN A TD ::::::::::::::::::::::::::::::::::::::::::::::::::::.. */
+td {
+    height: 100%;
+}
+a.table-anchor{
+	display: table;
+	position: relative;
+	height: 100%;
+	width: 100%;
+} 
+
+a.table-anchor .span{
+	display: table-cell;
+	text-align:center;
+	vertical-align: middle;
+}
+
+
+/* ..:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::.. */
+/* ..:: FIX FOR INLINE CHECKBOXES AND RADIOS :::::::::::::::::::::::::::::::::.. */
+/* ..:: http://stackoverflow.com/questions/15975968/twitter-bootstrap-inline-checkbox-alignment-issue */
+/* ..:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::.. */
+.checkbox-inline,
+.checkbox-inline + .checkbox-inline,
+.checkbox-inline + .radio-inline,
+.radio-inline,
+.radio-inline + .radio-inline,
+.radio-inline + .checkbox-inline {
+    margin-left: 0;
+    margin-right: 15px;
+}
+
+.checkbox-inline:last-child,
+.radio-inline:last-child {
+    margin-right: 0;
+}
+
+/* also lets correct some paddings for the inline variant */
+.radio-inline{
+	padding-top: 3px!important;
+	padding-left: 0px;
+}
+
+.checkbox-inline{
+	padding-left: 10px;
+	padding-top: 3px!important;
+}
+
+.checkbox{
+	padding-top: 3px!important;
+}
+
+/* ..:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::.. */
+/* ..:: CAROUSEL EXTENSION :::::::::::::::::::::::::::::::::::::::::::::::::::.. */
+/* ..:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::.. */
+.carousel[count-images="1"] > .carousel-control {
+  display: none;
+}
+
+/* ..:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::.. */
+/* ..:: FORM GROUP EXTENSIONS ::::::::::::::::::::::::::::::::::::::::::::::::.. */
+/* ..:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::.. */
+.form-group > .control-label
+{
+	word-wrap: break-word;	
+	padding-top: 5px;
+	text-align: right;
+}
+.form-group.required .control-label:after { 
+	font-family: FontAwesome;
+	/*font-family: Glyphicons Halflings;*/
+	font-size:1em;
+	color: #d00;
+    content: "\2a";
+    position: absolute;
+    margin-left: 5px;
+    top:0px;
+}
+
+/* ..:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::.. */
+/* ..:: INPUT GROUP EXTENSIONS ::::::::::::::::::::::::::::::::::::::::::::::::.. */
+/* ..:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::.. */
+.input-group.input-addon > .input-group-addon
+{
+	padding: inherit!important;	
+	border: inherit!important;
+}
+
+/* ..:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::.. */
+/* ..:: MODAL-STYLES :::::::::::::::::::::::::::::::::::::::::::::::::::::::::.. */
+/* ..:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::.. */
+.modal {
+  text-align: center;
+  padding: 0!important;
+}
+
+.modal-body {
+	/* thats the important shit to make the scrollbar appear within the modal instead on the body (which looks simply lousy ) */
+    max-height: calc(100vh - 350px);	
+    min-height: 60px;
+    overflow-y: auto;
+}
+
+.modal-header, .modal-footer{
+	padding-top: 2px;
+	padding-bottom: 2px;
+}
+
+.modal:before {
+  content: '';
+  display: inline-block;
+  height: 100%;
+  vertical-align: middle;
+  margin-right: -4px; /* Adjusts for spacing */
+}
+
+.modal-dialog {
+  display: inline-block;
+  text-align: left;
+  vertical-align: middle;
+}
+
+.modal-backdrop.in {
+    zoom: 1;
+    filter: alpha(opacity=75);
+    -webkit-opacity: .75;
+    -moz-opacity: .75;
+    opacity: .75;
+}
+
+.modal-backdrop {
+    /* look at the theme for a color */
+}
+
+.modal-xs{
+	width: 35%;
+}
+
+@media (max-width: 768px) 
+{
+	.modal-header
+	{
+		padding-top: 2px;
+		padding-bottom: 1px;
+	}
+
+	.modal-footer
+	{
+		padding-top: 2px;
+		padding-bottom: 2px;
+		padding-right: 2px;
+	}
+	
+	.modal-xs{
+		width: 90%;
+	}
+}
+
+/* ..:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::.. */
+/* ..:: PLACEHOLDER ::::::::::::::::::::::::::::::::::::::::::::::::::::::::::.. */
+/* ..:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::.. */
+.placeholder {
+  margin-bottom: 30px;
+  text-align: center;
+}
+.placeholder h4 {
+  margin-bottom: 0;
+}
+.placeholder {
+  margin-bottom: 20px;
+}
+.placeholder img {
+  display: inline-block;
+  border-radius: 50%;
+}
+
+/* ..:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::.. */
+/* ..:: Panel-Controls :::::::::::::::::::::::::::::::::::::::::::::::::::::::.. */
+/* ..:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::.. */
+ .panel-control{
+	float: right;
+	border: 0px none;
+	background: transparent none repeat scroll 0px 0px;
+	padding-left: 2px;
+	padding-right: 2px;
+	color: gray;
+}
+.panel-heading .accordion-toggle:after{
+	font-family: 'Glyphicons Halflings';  /* essential for enabling glyphicon */
+    content: "\e114";    /* adjust as needed, taken from bootstrap.css */
+}
+.panel-heading .accordion-toggle.collapsed:after{
+	content: "\e080";
+}
+
+/* ..:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::.. */
+/* ..:: IMAGE-CONTAINER ::::::::::::::::::::::::::::::::::::::::::::::::::::::.. */
+/* ..:::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::::.. */
+.responsive-container {
+    position: relative;
+    width: 100%;
+    border: 0px dotted black;
+}
+
+.dummy {
+    padding-top: 100%; /* forces 1:1 aspect ratio */
+}
+
+.img-container {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    
+    text-align:center; /* Align center inline elements */
+    font: 0/0 a;
+}
+
+.img-container .centerer {
+    display: inline-block;
+    vertical-align: middle;
+    height: 100%;
+}
+
+.img-container img {
+    vertical-align: middle;
+    display: inline-block;
+    max-height: 100%;  /* <-- Set maximum height to 100% of its parent */
+    max-width: 100%;   /* <-- Set maximum width to 100% of its parent */
+}
+
+.img-main-div {
+    border:1px solid #a9a9a9;
+    align-content: center;
+}
+
